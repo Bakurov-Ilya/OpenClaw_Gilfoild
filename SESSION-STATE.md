@@ -1,7 +1,6 @@
 # SESSION-STATE.md — Active Working Memory
 
-**Status:** active
-**Task:** Удаление ненужных скиллов + проверка xurl
+**Status:** idle
 **Last updated:** 2026-03-14 13:50 +05
 **Last updated:** 2026-03-14 13:27 +05
 
