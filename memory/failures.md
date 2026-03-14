@@ -27,7 +27,7 @@ Every failure gets logged here. No excuses, no sugar-coating. This is how we get
 ### 2026-03-15 — Неправильный агент при делегировании vision-задачи
 **What happened:** При запросе "опиши картинку" спавнул researcher-сабагента БЕЗ `agentId`. Subagent запустился с дефолтной моделью main-агента (hunter-alpha, текстовая) вместо healer-alpha (vision). Описание не удалось.
 **Root cause:** Не знал / забыл, что `sessions_spawn` без `agentId` берёт дефолтную модель main-агента, а не конфиг исследователя. Агент researcher настроен отдельно с `openrouter/healer-alpha`.
-**Fix:** Всегда указывать `agentId: "sherlock"` при делегировании vision/исследовательских задач. Запомнить: researcher → healer-alpha (vision), coder → hunter-alpha.
+**Fix:** Всегда указывать `agentId: "sherlock"` при делегировании vision/исследовательских задач. Запомнить: researcher → healer-alpha (vision), jian-yang → hunter-alpha.
 **Status:** resolved
 
 ---

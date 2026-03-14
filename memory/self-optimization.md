@@ -14,7 +14,7 @@ _(none yet)_
 
 ### ❌ Спавнить subagent без `agentId`
 **Причина:** Без явного `agentId` subagent берёт модель main-агента (hunter-alpha, текстовая). Для vision-задач нужен sherlock (healer-alpha, multimodal).
-**Запомнить:** vision → `agentId: "sherlock"`, код → `agentId: "coder"`
+**Запомнить:** vision → `agentId: "sherlock"`, код → `agentId: "jian-yang"`
 
 ## Patterns Detected
 

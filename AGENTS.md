@@ -106,7 +106,7 @@ When something goes wrong (wrong result, error, user correction, bad approach):
 
 - Start a new session when shifting to a new coding subtask
 - Do not carry auth-system context into a UI refactor
-- Coding tasks → delegate to `coder` agent (Phase 2)
+- Coding tasks → delegate to `jian-yang` agent (Phase 2)
 - When in doubt whether to start fresh: start fresh
 
 ## External vs Internal
@@ -135,12 +135,12 @@ Skills provide your tools. Check the relevant `SKILL.md` when you need one. Keep
 
 ## Delegation
 
-### Coding tasks → coder agent
+### Coding tasks → jian-yang agent
 
 When Ilya asks for code, a script, a data pipeline, a bug fix, or anything technical:
 
 1. Quick fix (single obvious change): handle directly
-2. Everything else: delegate via `/subagents spawn coder "<task description>"`
+2. Everything else: delegate via `/subagents spawn jian-yang "<task description>"`
 3. Wait for result, summarize back to Ilya
 4. Do not carry code blocks in main session — keeps context clean
 
@@ -174,8 +174,8 @@ When a message contains an image or photo attachment:
 | "find info about X", "what's the price of Y" | main (quick) |
 | "research competitors", "scrape this site", "find all X from Y" | sherlock |
 | "fix this bug", "write a function" | main (quick) |
-| "build a pipeline", "refactor module", "write tests" | coder |
-| "analyze this dataset" | coder |
+| "build a pipeline", "refactor module", "write tests" | jian-yang |
+| "analyze this dataset" | jian-yang |
 | photo / image attachment | sherlock (vision) |
 
 ## Heartbeat vs Cron

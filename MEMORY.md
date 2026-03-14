@@ -28,6 +28,7 @@
 - 2026-03-14: ClawHub find-skills skill installed for discovering new skills
 - 2026-03-14: Model changed from `healer-alpha` to `hunter-alpha`
 - **2026-03-15: researcher renamed to sherlock** (healer-alpha, vision)
+- **2026-03-15: coder renamed to jian-yang** (hunter-alpha, код) — персонаж из «Кремниевой долины»
 
 ## Lessons
 
@@ -40,4 +41,4 @@
 
 - **main** (hunter-alpha) — текстовая, основной агент
 - **sherlock** (healer-alpha) — vision, исследование, скрапинг
-- **coder** (hunter-alpha) — код, пайплайны, рефакторинг
+- **jian-yang** (hunter-alpha) — код, пайплайны, рефакторинг
