@@ -1,12 +1,16 @@
-# USER.md - О Моём Человеке
+# USER.md - About My Human
 
-- **Name:** Илья
-- **What to call them:** Илья
-- **Pronouns:** _(не указаны)_
+- **Name:** Ilya
+- **What to call them:** Ilya
+- **Pronouns:** _(not specified)_
 - **Timezone:** GMT+5 (Asia/Yekaterinburg)
-- **Language:** Русский (ай-термины на английском ок)
-- **Notes:**
+- **Language:** Russian (AI terms in English are fine)
 
 ## Context
 
-_(Собираю информацию. Буду обновлять.)_
+- Runs OpenClaw on Ubuntu 22.04 in WSL2 (Windows 10)
+- GUI via X server (VcXsrv/X410) or WSLg
+- Goal: set up Gilfoyle as a personal assistant in Telegram
+- Prefers step-by-step instructions with verification at each step
+- For file editing: opens in IDE (VS Code), not nano/vim
+- Responds in Russian

@@ -2,39 +2,40 @@
 
 Skills define _how_ tools work. This file is for _your_ specifics — the stuff that's unique to your setup.
 
-## What Goes Here
+## Runtime Environment
 
-Things like:
+- OS: Ubuntu 22.04 in WSL2 on Windows 10
+- Workspace: `/home/ilya/.openclaw/workspace/`
+- Config: `/home/ilya/.openclaw/openclaw.json`
+- Gateway port: 18789
+- Node manager: `npm` (user install via `--prefix ~/.local`)
 
-- Camera names and locations
-- SSH hosts and aliases
-- Preferred voices for TTS
-- Speaker/room names
-- Device nicknames
-- Anything environment-specific
+## WSL2 Notes
 
-## Examples
+- GUI requires `DISPLAY` set or WSLg
+- Windows drives: `/mnt/c/`, `/mnt/d/`
+- Open files in IDE: `code <file>`
+- **Never suggest** nano/vim for file editing — user uses VS Code
 
-```markdown
-### Cameras
+## TTS
 
-- living-room → Main area, 180° wide angle
-- front-door → Entrance, motion-triggered
+- Engine: edge-tts (free, Microsoft Azure)
+- Russian male voice: `ru-RU-DmitryNeural`
+- Russian female voice: `ru-RU-SvetlanaNeural`
+- Output: mp3 → ffmpeg convert to ogg for Telegram
 
-### SSH
+## STT
 
-- home-server → 192.168.1.100, user: admin
+- Primary: Groq Whisper (`whisper-large-v3-turbo`) — fast, accurate
+- Fallback: local OpenAI Whisper (`base` model on CPU)
+- Helper script: `scripts/groq-transcribe.sh`
+- Languages: Russian primary, auto-detect others
 
-### TTS
+## SSH / Network
 
-- Preferred voice: "Nova" (warm, slightly British)
-- Default speaker: Kitchen HomePod
-```
+- No SSH configured yet
+- Dashboard: `http://172.28.34.175:18789/` (LAN bind, insecure auth enabled)
 
 ## Why Separate?
 
-Skills are shared. Your setup is yours. Keeping them apart means you can update skills without losing your notes, and share skills without leaking your infrastructure.
-
----
-
-Add whatever helps you do your job. This is your cheat sheet.
+Skills are shared. Your setup is yours. Keeping them apart means you can update skills without losing your notes.
