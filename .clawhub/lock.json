@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "skills": {
+    "find-skills": {
+      "version": "0.1.0",
+      "installedAt": 1773466394581
+    },
+    "tg-voice-whisper": {
+      "version": "1.0.0",
+      "installedAt": 1773466446605
+    }
+  }
+}
