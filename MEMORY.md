@@ -33,6 +33,7 @@
 - Local Whisper tiny model is too inaccurate for Russian (~60%)
 - Local Whisper base is accurate but too slow on CPU (38s)
 - Groq free tier is generous and lightning fast (sub-1s)
+- **ALWAYS specify `agentId: "researcher"` for vision tasks** — researcher uses healer-alpha (multimodal), main uses hunter-alpha (text-only). Without `agentId`, subagent defaults to main model.
 
 ## Architecture (Proactive Agent v3.1.0)
 

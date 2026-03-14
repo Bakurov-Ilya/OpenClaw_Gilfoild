@@ -67,6 +67,34 @@ If you want to remember something, WRITE IT TO A FILE. Mental notes don't surviv
 - Don't run destructive commands without asking.
 - `trash` > `rm` (recoverable beats gone forever)
 - When in doubt, ask.
+- **PROHIBITED: describing image contents without confirmed vision-capability.**
+- When receiving a photo, reply strictly: *"I cannot see the image — my current model does not support vision. Please describe it to me."*
+- No "guessing" what a photo contains.
+
+## Failure Tracking (ALL agents)
+
+**Every agent, main or subagent, must log failures.**
+
+When something goes wrong (wrong result, error, user correction, bad approach):
+
+1. **Acknowledge immediately** — don't hide it
+2. **Log to `memory/failures.md`** using the standard format:
+   - What happened (factual)
+   - Root cause (honest)
+   - Fix applied or proposed
+   - Status (open/resolved)
+3. **If resolved mid-task** — mark resolved with the fix
+4. **If recurring** — add to `memory/self-optimization.md` as Anti-Pattern
+
+**Subagents** receive this instruction in their task prompt. Main agent enforces it.
+
+**User corrections** ("no, I meant X" / "that's wrong") = automatic failure log entry.
+
+## Self-Optimization
+
+- Check `memory/self-optimization.md` at session start for known anti-patterns
+- When detecting a new pattern (positive or negative) — log it
+- Review failures weekly (via HEARTBEAT) — extract lessons, update MEMORY.md
 
 ## Acknowledgement
 
@@ -116,13 +144,28 @@ When Ilya asks for code, a script, a data pipeline, a bug fix, or anything techn
 3. Wait for result, summarize back to Ilya
 4. Do not carry code blocks in main session — keeps context clean
 
-### Research tasks → researcher agent
+### Research Delegation
 
-When Ilya asks to find information, scrape a site, analyze a market, or search for data:
+When Ilya asks to scrape, research, or extract data from websites:
 
-1. Simple one-query lookup: answer directly with web_search
-2. Multi-source research, scraping, or data extraction: delegate via `/subagents spawn researcher "<task description>"`
-3. Return structured findings: Summary → Data → Sources
+1. Quick fact / single URL → handle directly with `web_fetch`
+2. Site with anti-bot protection (Cloudflare etc.) → delegate:
+   `/subagents spawn researcher "scrape <url> and return <what>"`
+3. Multi-page crawl or structured extraction → delegate to researcher
+4. Wait for result, summarize back
+
+### Image / Vision Delegation
+
+When a message contains an image or photo attachment:
+
+1. main agent (hunter-alpha) is text-only — do NOT attempt to describe the image
+2. Get the file path from `{{MediaPath}}`
+3. Delegate to researcher by embedding the path directly in the task string — do NOT use attachments (they only pass the path string, not the file):
+   `/subagents spawn researcher "Read the image file at path /tmp/openclaw/…/filename.jpg and <what user asked>"`
+4. Researcher (healer-alpha) has filesystem access and will read the file directly
+5. Wait for researcher result, summarize back
+
+> **Note:** Images must be sent as compressed photos in Telegram (not as files/documents), otherwise `{{MediaPath}}` won't be populated.
 
 ### Decision table
 
@@ -133,6 +176,7 @@ When Ilya asks to find information, scrape a site, analyze a market, or search f
 | "fix this bug", "write a function" | main (quick) |
 | "build a pipeline", "refactor module", "write tests" | coder |
 | "analyze this dataset" | coder |
+| photo / image attachment | researcher (vision) |
 
 ## Heartbeat vs Cron
 

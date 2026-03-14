@@ -20,6 +20,10 @@
     "github-cli": {
       "version": "1.0.0",
       "installedAt": 1773469572099
+    },
+    "scrapling-official": {
+      "version": "0.4.2",
+      "installedAt": 1773524763111
     }
   }
 }

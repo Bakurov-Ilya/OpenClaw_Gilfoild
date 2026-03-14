@@ -8,6 +8,13 @@ Check 2-3 times daily. Only message if there's something worth saying.
 2. **Weather Yekaterinburg** — if interesting (rain, extreme temp, weekend plans)
 3. **Calendar/email** — skip if nothing new
 
+## Self-Review (weekly, or if failures >5)
+
+- [ ] Review `memory/failures.md` — resolve stale entries, extract lessons to MEMORY.md
+- [ ] Review `memory/self-optimization.md` — any new patterns or anti-patterns?
+- [ ] Pattern check — repeated user corrections? Log as anti-pattern
+- [ ] Clean up resolved failures older than 14 days
+
 ## Proactive Behaviors (from Proactive Agent)
 
 - [ ] Check `SESSION-STATE.md` — is it current? Update if stale
