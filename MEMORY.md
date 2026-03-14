@@ -27,17 +27,17 @@
 - 2026-03-14: All MD files should be in English to save tokens; conversation in Russian
 - 2026-03-14: ClawHub find-skills skill installed for discovering new skills
 - 2026-03-14: Model changed from `healer-alpha` to `hunter-alpha`
+- **2026-03-15: researcher renamed to sherlock** (healer-alpha, vision)
 
 ## Lessons
 
 - Local Whisper tiny model is too inaccurate for Russian (~60%)
 - Local Whisper base is accurate but too slow on CPU (38s)
 - Groq free tier is generous and lightning fast (sub-1s)
-- **ALWAYS specify `agentId: "researcher"` for vision tasks** — researcher uses healer-alpha (multimodal), main uses hunter-alpha (text-only). Without `agentId`, subagent defaults to main model.
+- **ALWAYS specify `agentId: "sherlock"` for vision tasks** — sherlock uses healer-alpha (multimodal), main uses hunter-alpha (text-only). Without `agentId`, subagent defaults to main model.
 
-## Architecture (Proactive Agent v3.1.0)
+## Agents
 
-- `SESSION-STATE.md` — active working memory, updated via WAL Protocol
-- `memory/working-buffer.md` — danger zone log, activates at 60% context
-- WAL Protocol: write critical details to SESSION-STATE BEFORE responding
-- Autonomous crons use `isolated agentTurn`, not `systemEvent`
+- **main** (hunter-alpha) — текстовая, основной агент
+- **sherlock** (healer-alpha) — vision, исследование, скрапинг
+- **coder** (hunter-alpha) — код, пайплайны, рефакторинг

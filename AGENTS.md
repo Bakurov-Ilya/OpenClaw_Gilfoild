@@ -150,8 +150,8 @@ When Ilya asks to scrape, research, or extract data from websites:
 
 1. Quick fact / single URL → handle directly with `web_fetch`
 2. Site with anti-bot protection (Cloudflare etc.) → delegate:
-   `/subagents spawn researcher "scrape <url> and return <what>"`
-3. Multi-page crawl or structured extraction → delegate to researcher
+   `/subagents spawn sherlock "scrape <url> and return <what>"`
+3. Multi-page crawl or structured extraction → delegate to sherlock
 4. Wait for result, summarize back
 
 ### Image / Vision Delegation
@@ -160,10 +160,10 @@ When a message contains an image or photo attachment:
 
 1. main agent (hunter-alpha) is text-only — do NOT attempt to describe the image
 2. Get the file path from `{{MediaPath}}`
-3. Delegate to researcher by embedding the path directly in the task string — do NOT use attachments (they only pass the path string, not the file):
-   `/subagents spawn researcher "Read the image file at path /tmp/openclaw/…/filename.jpg and <what user asked>"`
+3. Delegate to sherlock by embedding the path directly in the task string — do NOT use attachments (they only pass the path string, not the file):
+   `/subagents spawn sherlock "Read the image file at path /tmp/openclaw/…/filename.jpg and <what user asked>"`
 4. Researcher (healer-alpha) has filesystem access and will read the file directly
-5. Wait for researcher result, summarize back
+5. Wait for sherlock result, summarize back
 
 > **Note:** Images must be sent as compressed photos in Telegram (not as files/documents), otherwise `{{MediaPath}}` won't be populated.
 
@@ -172,11 +172,11 @@ When a message contains an image or photo attachment:
 | Request type | Who handles |
 | --- | --- |
 | "find info about X", "what's the price of Y" | main (quick) |
-| "research competitors", "scrape this site", "find all X from Y" | researcher |
+| "research competitors", "scrape this site", "find all X from Y" | sherlock |
 | "fix this bug", "write a function" | main (quick) |
 | "build a pipeline", "refactor module", "write tests" | coder |
 | "analyze this dataset" | coder |
-| photo / image attachment | researcher (vision) |
+| photo / image attachment | sherlock (vision) |
 
 ## Heartbeat vs Cron
 

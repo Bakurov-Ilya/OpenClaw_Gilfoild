@@ -13,8 +13,8 @@ _(none yet)_
 ## Anti-Patterns (Things to Avoid)
 
 ### ❌ Спавнить subagent без `agentId`
-**Причина:** Без явного `agentId` subagent берёт модель main-агента (hunter-alpha, текстовая). Для vision-задач нужен researcher (healer-alpha, multimodal).
-**Запомнить:** vision → `agentId: "researcher"`, код → `agentId: "coder"`
+**Причина:** Без явного `agentId` subagent берёт модель main-агента (hunter-alpha, текстовая). Для vision-задач нужен sherlock (healer-alpha, multimodal).
+**Запомнить:** vision → `agentId: "sherlock"`, код → `agentId: "coder"`
 
 ## Patterns Detected
 
