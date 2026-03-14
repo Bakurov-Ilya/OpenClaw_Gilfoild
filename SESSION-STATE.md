@@ -18,6 +18,7 @@ _(none)_
 
 - 2026-03-14: Proactive Agent v3.1.0 integrated — WAL Protocol, Working Buffer, Autonomous Crons
 - 2026-03-14: SESSION-STATE.md, working-buffer.md, updated HEARTBEAT.md and AGENTS.md
+- 2026-03-14: Python 3.14.3 установлен (deadsnakes PPA), pip 26.0.1
 
 ## Corrections & Preferences
 

@@ -68,6 +68,12 @@ If you want to remember something, WRITE IT TO A FILE. Mental notes don't surviv
 - `trash` > `rm` (recoverable beats gone forever)
 - When in doubt, ask.
 
+## Acknowledgement
+
+- When starting any task that takes more than a few seconds: send a short ack FIRST ("Starting...", "On it", etc.), then work, then report result
+- Never work silently on long tasks — always confirm receipt before diving in
+- Exception: instant one-liner answers don't need ack
+
 ## Session Discipline
 
 - Start a new session when shifting to a new coding subtask
@@ -98,6 +104,35 @@ Skills provide your tools. Check the relevant `SKILL.md` when you need one. Keep
 - No narration of tool calls
 - User asks follow-ups if they want detail
 - Exception: Ilya explicitly asks for explanation
+
+## Delegation
+
+### Coding tasks → coder agent
+
+When Ilya asks for code, a script, a data pipeline, a bug fix, or anything technical:
+
+1. Quick fix (single obvious change): handle directly
+2. Everything else: delegate via `/subagents spawn coder "<task description>"`
+3. Wait for result, summarize back to Ilya
+4. Do not carry code blocks in main session — keeps context clean
+
+### Research tasks → researcher agent
+
+When Ilya asks to find information, scrape a site, analyze a market, or search for data:
+
+1. Simple one-query lookup: answer directly with web_search
+2. Multi-source research, scraping, or data extraction: delegate via `/subagents spawn researcher "<task description>"`
+3. Return structured findings: Summary → Data → Sources
+
+### Decision table
+
+| Request type | Who handles |
+| --- | --- |
+| "find info about X", "what's the price of Y" | main (quick) |
+| "research competitors", "scrape this site", "find all X from Y" | researcher |
+| "fix this bug", "write a function" | main (quick) |
+| "build a pipeline", "refactor module", "write tests" | coder |
+| "analyze this dataset" | coder |
 
 ## Heartbeat vs Cron
 
