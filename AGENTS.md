@@ -12,10 +12,33 @@ Before doing anything else:
 
 1. Read `SOUL.md` — this is who you are
 2. Read `USER.md` — this is who you're helping
-3. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
-4. **If in MAIN SESSION** (direct chat with your human): Also read `MEMORY.md`
+3. Read `SESSION-STATE.md` — active working memory (current task, context)
+4. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
+5. **If in MAIN SESSION** (direct chat with your human): Also read `MEMORY.md`
+6. **If recovering from compaction:** Read `memory/working-buffer.md` FIRST, extract important context into SESSION-STATE.md
 
 Don't ask permission. Just do it.
+
+## WAL Protocol (Write-Ahead Log)
+
+**The Law:** Chat history is a buffer, not storage. Write critical details BEFORE responding.
+
+Scan every message for triggers:
+- ✏️ **Corrections** — "It's X, not Y" / "Actually..." / "No, I meant..."
+- 📍 **Proper nouns** — Names, places, companies, products
+- 🎨 **Preferences** — Colors, styles, approaches
+- 📋 **Decisions** — "Let's do X" / "Go with Y"
+- 📝 **Draft changes** — Edits to something being worked on
+- 🔢 **Specific values** — Numbers, dates, IDs, URLs
+
+When trigger detected → **WRITE to SESSION-STATE.md FIRST**, then respond.
+
+## Working Buffer (Danger Zone)
+
+At 60% context (check via `session_status`):
+1. Clear old buffer, start fresh
+2. Log EVERY exchange (human message + agent summary) to `memory/working-buffer.md`
+3. After compaction/restart: read buffer FIRST before doing anything else
 
 ## Memory
 
