@@ -1,7 +1,8 @@
 # SESSION-STATE.md — Active Working Memory
 
 **Status:** active
-**Task:** Git commit & push workspace changes
+**Task:** Удаление ненужных скиллов + проверка xurl
+**Last updated:** 2026-03-14 13:50 +05
 **Last updated:** 2026-03-14 13:27 +05
 
 ---

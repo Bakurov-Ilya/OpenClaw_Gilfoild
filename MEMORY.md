@@ -26,6 +26,7 @@
 - 2026-03-14: Groq Whisper chosen over local Whisper (0.8s vs 38s, perfect accuracy)
 - 2026-03-14: All MD files should be in English to save tokens; conversation in Russian
 - 2026-03-14: ClawHub find-skills skill installed for discovering new skills
+- 2026-03-14: Model changed from `healer-alpha` to `hunter-alpha`
 
 ## Lessons
 
