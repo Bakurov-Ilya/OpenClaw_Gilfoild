@@ -31,3 +31,20 @@ Don't message between 23:00–09:00 (GMT+5) unless urgent.
 ## Format
 
 Keep it short. "☀️ 5°C, солнечно. Git clean." is fine. Don't write essays.
+
+## State Tracking
+
+Track last check times in `memory/heartbeat-state.json`:
+
+```json
+{
+  "lastChecks": {
+    "email": null,
+    "calendar": null,
+    "weather": null,
+    "git": null
+  }
+}
+```
+
+Don't re-check something you checked <2h ago unless explicitly asked.
