@@ -8,6 +8,18 @@
     "tg-voice-whisper": {
       "version": "1.0.0",
       "installedAt": 1773466446605
+    },
+    "ddg-web-search": {
+      "version": "1.0.0",
+      "installedAt": 1773469548552
+    },
+    "file-organizer-skill": {
+      "version": "1.0.0",
+      "installedAt": 1773469562086
+    },
+    "github-cli": {
+      "version": "1.0.0",
+      "installedAt": 1773469572099
     }
   }
 }
